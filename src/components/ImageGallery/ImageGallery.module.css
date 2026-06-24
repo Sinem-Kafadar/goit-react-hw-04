@@ -1,12 +1,28 @@
 .galleryList {
     display: grid;
-    max-width: calc(100vw - 48px);
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    grid-gap: 16px;
-    margin-top: 24px;
-    margin-bottom: 24px;
+    max-width: 1400px;
+    /* repeat(4, 1fr) sayesinde büyük ekranlarda yan yana tam 4 sütun oluşturuyoruz */
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
     padding: 0;
     list-style: none;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 24px auto;
+}
+
+@media (max-width: 1200px) {
+    .galleryList {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .galleryList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .galleryList {
+        grid-template-columns: 1fr;
+    }
 }
